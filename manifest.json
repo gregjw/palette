@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "Palette",
+  "description": "Quick interesting colour palettes for your next project",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "off.png",
+   "default_popup": "popup.html"
+  },
+
+  "icons": { "16": "on.png",
+           "48": "on.png",
+          "128": "on.png" },
+
+  "permissions": [
+   "activeTab", "alarms", "notifications"
+   ]
+}
