@@ -3,8 +3,9 @@
   <head>
     <title>Palette by Feather</title>
     <script src="popup.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <style>
+
 	    *{
 	    	text-decoration: none;
 	    	text-decoration-color: transparent;
@@ -19,19 +20,20 @@
             margin: 0;
             padding: 0;
             width: 200px;
+            background-color: #F1F1F1;
         }
 
     	.title{
-    		font-family: 'Open Sans', Arial, san-serif;
-    		font-weight: lighter;
-    		font-size: 19pt;
+    		font-family: 'Roboto', Arial, san-serif;
+    		font-weight: 500;
+    		font-size: 22pt;
     		text-align: center;
     		text-decoration: none;
     		color: #444;
     	}
 
     	.subtitle{
-    		font-family: 'Open Sans', Arial, san-serif;
+    		font-family: 'Roboto', Arial, san-serif;
     		font-weight: lighter;
     		font-size: 7pt;
     		text-align: center;
@@ -40,44 +42,43 @@
     		margin-top: -20px;
     	}
 
-    		.view{
-                background-image: linear-gradient(rgb(57, 160, 239) 0px, rgb(33,147,235) 100%);
-                color: #fff; 
-                border: 1px solid #1c92ed;
-                font-size: 14px;
-                font-family: 'Open Sans', Arial, san-serif;
-                padding: 1px;
-                font-weight: normal;
-                border-radius:3px;
-                -webkit-font-smoothing: antialiased;
-                text-transform: none;
-                text-align: center;
-                width: 92px;
-                padding-top: 6px;
-                padding-bottom: 5px;
-                display: block;
-                margin-right: auto;
-                margin-left: auto;
-                margin-bottom: 25px;
-            }
+    	.view{
+            background-image: linear-gradient(rgb(57, 160, 239) 0px, rgb(33,147,235) 100%);
+            color: #fff; 
+            border: 1px solid #1c92ed;
+            font-size: 14px;
+            font-family: 'Roboto', Arial, san-serif;
+            padding: 1px;
+            font-weight: normal;
+            border-radius:3px;
+            -webkit-font-smoothing: antialiased;
+            text-transform: none;
+            text-align: center;
+            width: 92px;
+            padding-top: 6px;
+            padding-bottom: 5px;
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 25px;
+        }
 
-            .view:hover{
-                background-image: linear-gradient(rgb(22, 142, 234) 0px, rgb(33,147,235) 100%);
-            }
+        .view:hover{
+            background-image: linear-gradient(rgb(22, 142, 234) 0px, rgb(33,147,235) 100%);
+        }
 
-            .view:active{
-                box-shadow: inset 0 0px 5px rgba(0,0,0,.5);
-            }
-
+        .view:active{
+            box-shadow: inset 0 0px 5px rgba(0,0,0,.5);
+        }
     </style>
   </head>
   <body>
     <h1 id="feather-link" class="title"><a href="http://feather-cfm.com?ref=palette">Palette</h1>
-    <h4 id="feather-link-subtitle" class="subtitle"><a href="http://feather-cfm.com?ref=palette">by Feather</a></h4>
+    <h4 id="feather-link-subtitle" class="subtitle"><a href="http://feather-cfm.com?ref=palette">by <div style="color:rgb(57, 160, 239);display: inline-block;">Feather</div></a></h4>
     <br>
-    <div id="topcolour" style="width:75px;height:50%;display:block;background-color:#333;margin:0 auto;margin-top:10px;">
+    <div id="topcolour" style="width:75px;height:75px;display:block;background-color:#333;margin:0 auto;margin-top:10px;">
     </div>
-    <div id="bottomcolour" style="width:75px;height:50%;display:block;background-color:#666;margin:0 auto;margin-bottom:25px;">
+    <div id="bottomcolour" style="width:75px;height:75px;display:block;background-color:#666;margin:0 auto;margin-bottom:25px;">
     </div>
     <button id="startTimer" class="view">Generate</button>
   </body>

@@ -1,12 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
-  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
-    analytics.load("coilKhNu5rAGdAxjARgQSd25061ZLywc");
-    analytics.page();
-  }}();
-
-  if(localStorage.getItem("colour0") != undefined){
+  if(typeof(localStorage.getItem("colour0")) != "undefined"){
     document.getElementById("topcolour").style.backgroundColor = localStorage.getItem("colour0")
     document.getElementById("bottomcolour").style.backgroundColor = localStorage.getItem("colour1")
+  }
+
+  function copyTextToClipboard(text) {
+    var copyFrom = document.createElement("textarea");
+    copyFrom.textContent = text;
+    var body = document.getElementsByTagName('body')[0];
+    body.appendChild(copyFrom);
+    copyFrom.select();
+    document.execCommand('copy');
+    body.removeChild(copyFrom);
   }
 
   function mixPalette(){
@@ -114,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.tabs.getSelected(null, function(tab) {
 
       setTimeout(function(){
-        chrome.browserAction.setIcon({path : "off.png"});
+        chrome.browserAction.setIcon({path : "on.png"});
         generatePalette();
       }, 500);
 
@@ -126,16 +131,21 @@ document.addEventListener('DOMContentLoaded', function() {
   var bottomColour = document.getElementById('bottomcolour');
 
   topColour.addEventListener('click', function() {
-    topColour.style.opacity = 0.8;
-    bottomColour.style.opacity = 1;
-    topColour.css("background-color").focus().select();
+    topColour.style.width = "80px";
+    topColour.style.height = "80px";
+    bottomColour.style.width = "75px";
+    bottomColour.style.height = "75px";
+    copyTextToClipboard(localStorage.getItem("colour0"));
     document.execCommand('copy');
   }, false);
 
   bottomColour.addEventListener('click', function() {
-    bottomColour.style.opacity = 0.8;
-    topColour.style.opacity = 1;
-    bottopColour.css("background-color").focus().select();
+    bottomColour.style.width = "80px";
+    bottomColour.style.height = "80px";
+    topColour.style.width = "75px";
+    topColour.style.height = "75px";
+    copyTextToClipboard(localStorage.getItem("colour1"));
     document.execCommand('copy');
   }, false);
+
 }, false);
