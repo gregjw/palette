@@ -3,8 +3,8 @@
 
   "name": "Palette",
   "description": "Quick interesting colour palettes for your next project",
-  "version": "1.0",
-
+  "version": "2.0",
+  "author":"Feather",
   "browser_action": {
    "default_icon": "on.png",
    "default_popup": "popup.html"
